@@ -21,6 +21,7 @@ private final OrderDAO DAO = new OrderDAO();
 
 public Order(long orderID, String datePlaced, Item item, Customer customer)=new Order();
 
+/*public Order(long orderID, String datePlaced, long customerID, long productID)=new Order();*/
 	
 	@Before
 	public void setup() {
@@ -30,7 +31,7 @@ public Order(long orderID, String datePlaced, Item item, Customer customer)=new 
 
 	@Test
 	public void testCreate() {
-		final Order created = new Order(orderID,"27/10/2021",item,customer);
+		final Order created = new Order(2, "28/10/2021", 1,1);
 		assertEquals(created, DAO.create(created));
 	}
 
@@ -43,18 +44,18 @@ public Order(long orderID, String datePlaced, Item item, Customer customer)=new 
 
 	@Test
 	public void testReadLatest() {
-		assertEquals(new Order(orderID,"27/10/2021",item,customer), DAO.readLatest());
+		assertEquals(new Order(2, "28/10/2021", 1,1), DAO.readLatest());
 	}
 
 	@Test
 	public void testRead() {
 		final long productID = 1;
-		assertEquals(new Order(orderID,"27/10/2021",item,customer), DAO.read(productID));
+		assertEquals(new Order(2, "28/10/2021", 1,1), DAO.read(productID));
 	}
 
 	@Test
 	public void testUpdate() {
-		final Order updated = new Order(orderID,"28/10/2021",item,customer);
+		final Order updated = new Order(2, "28/10/2021", 1,1);
 		assertEquals(updated, DAO.update(updated));
 
 	}
