@@ -11,11 +11,13 @@ public class Customer {
 		this.setSurname(surname);
 	}
 
-	public Customer(Long id, String firstName, String surname) {
-		this.setId(id);
-		this.setFirstName(firstName);
-		this.setSurname(surname);
+	public Customer(Long customerID, String firstName, String surname) {
+		super();
+		this.customerID = customerID;
+		this.firstName = firstName;
+		this.surname = surname;
 	}
+
 
 	public Long getId() {
 		return customerID;
@@ -82,5 +84,4 @@ public class Customer {
 			return false;
 		return true;
 	}
-
 }

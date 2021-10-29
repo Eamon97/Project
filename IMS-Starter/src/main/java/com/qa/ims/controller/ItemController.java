@@ -16,8 +16,6 @@ public class ItemController implements CrudController<Item> {
 	private ItemDAO itemDAO;
 	private Utils utils;
 	
-	
-	
 	public ItemController(ItemDAO itemDAO, Utils utils) {
 		super();
 		this.itemDAO = itemDAO;
@@ -31,7 +29,6 @@ public class ItemController implements CrudController<Item> {
 			LOGGER.info(item);
 		}
 		return items;
-	
 	}
 
 	@Override
@@ -61,7 +58,6 @@ public class ItemController implements CrudController<Item> {
 		return item;
 	}
 	
-
 	@Override
 	public int delete() {
 		LOGGER.info("Please enter the product id of the item you would like to delete");

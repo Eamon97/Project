@@ -1,7 +1,7 @@
 INSERT INTO `ims`.`customers` (`first_name`, `surname`) VALUES ('jordan', 'harrison');
 INSERT INTO `ims`.`customers` (`first_name`, `surname`) VALUES ('Eamon', 'Moradi');
 INSERT INTO `ims`.`customers` (`first_name`, `surname`) VALUES ('Mark', 'Rob');
-INSERT INTO `ims`.`customers` (`first_name`, `surname`) VALUES ('', '');
+
 
 INSERT INTO `ims`.`item` (`productDescription`, `price`) VALUES ('ball', '4.99');
 INSERT INTO `ims`.`item` (`productDescription`, `price`) VALUES ('trainers', '20.00');

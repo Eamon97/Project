@@ -1,19 +1,21 @@
 Coverage: 34%
 # Project Title
 
-One Paragraph of project description goes here
+Inventory Management System project consisting of a customer, orders and items.
 
 ## Getting Started
 
-These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
+Git clone repository from github containing the IMS project files to your local repository.
 
 ### Prerequisites
 
-What things you need to install the software and how to install them
+Software used:
+Eclipse
+MySQLServer
 
-```
-Give examples
-```
+requires: Java Developer Kit, SQL community server.
+
+
 
 ### Installing
 
@@ -70,11 +72,12 @@ Add additional notes about how to deploy this on a live system
 
 ## Versioning
 
-We use [SemVer](http://semver.org/) for versioning.
+We use [Github](http://Github.com/) for versioning.
 
 ## Authors
 
 * **Chris Perrins** - *Initial work* - [christophperrins](https://github.com/christophperrins)
+Eamon Moradi
 
 ## License
 

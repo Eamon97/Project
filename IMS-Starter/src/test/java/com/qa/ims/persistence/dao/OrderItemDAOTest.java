@@ -1,6 +1,5 @@
 package com.qa.ims.persistence.dao;
 
-
 import static org.junit.Assert.assertEquals;
 
 import java.util.ArrayList;
@@ -9,15 +8,12 @@ import java.util.List;
 import org.junit.Before;
 import org.junit.Test;
 
-
 import com.qa.ims.persistence.domain.Order;
-
 import com.qa.ims.utils.DBUtils;
 
-public class OrderDAOTest {
-private final OrderDAO DAO = new OrderDAO();
-
-
+public class OrderItemDAOTest {
+	private final OrderItemsDAO DAO = new OrderItemsDAO();
+	
 	@Before
 	public void setup() {
 		DBUtils.connect();
@@ -62,7 +58,4 @@ private final OrderDAO DAO = new OrderDAO();
 		assertEquals(1, DAO.delete(1));
 	}
 }
-
-
-
 

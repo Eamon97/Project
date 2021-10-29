@@ -1,12 +1,9 @@
 package com.qa.ims.persistence.domain;
 
-import java.util.Objects;
-
 public class Item {
 private long productID;
 private String productDescription;
 private double price;
-
 
 
 public Item(long productID2, String productDescription, double price) {
@@ -15,7 +12,6 @@ public Item(long productID2, String productDescription, double price) {
 	this.productDescription = productDescription;
 	this.price= price;
 }
-
 
 
 public Item(String productDescription, double price) {
@@ -61,44 +57,45 @@ public void setPrice(double price) {
 
 @Override
 public int hashCode() {
-	return Objects.hash(price, productDescription, productID);
+	final int prime = 31;
+	int result = 1;
+	long temp;
+	temp = Double.doubleToLongBits(price);
+	result = prime * result + (int) (temp ^ (temp >>> 32));
+	result = prime * result + ((productDescription == null) ? 0 : productDescription.hashCode());
+	result = prime * result + (int) (productID ^ (productID >>> 32));
+	return result;
 }
 
 
 
 @Override
 public boolean equals(Object obj) {
-	if (this == obj) {
+	if (this == obj)
 		return true;
-	}
-	if (obj == null) {
+	if (obj == null)
 		return false;
-	}
-	if (getClass() != obj.getClass()) {
+	if (getClass() != obj.getClass())
 		return false;
-	}
 	Item other = (Item) obj;
-	return Double.doubleToLongBits(price) == Double.doubleToLongBits(other.price)
-			&& Objects.equals(productDescription, other.productDescription) && productID == other.productID;
+	if (Double.doubleToLongBits(price) != Double.doubleToLongBits(other.price))
+		return false;
+	if (productDescription == null) {
+		if (other.productDescription != null)
+			return false;
+	} else if (!productDescription.equals(other.productDescription))
+		return false;
+	if (productID != other.productID)
+		return false;
+	return true;
+}
+
+
+@Override
+public String toString() {
+	return "Item [productID=" + productID + ", productDescription=" + productDescription + ", price=" + price + "]";
 }
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-	
 }

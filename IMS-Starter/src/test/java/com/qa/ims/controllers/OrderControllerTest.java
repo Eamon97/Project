@@ -36,30 +36,27 @@ public class OrderControllerTest {
 
 	@Test
 	public void testCreate() {
-		
 		final long orderID=2;
-		final String datePlaced="28/10/2021";
 		final long customerID=1;
 		final long itemID=3;
-		final Order created = new Order(orderID,datePlaced,itemID,customerID);
+		final Order created = new Order(orderID,itemID,customerID);
 		
 
 		Mockito.when(utils.getLong()).thenReturn(orderID);
-		Mockito.when(utils.getString()).thenReturn(datePlaced);
 		Mockito.when(utils.getLong()).thenReturn(customerID);
 		Mockito.when(utils.getLong()).thenReturn(itemID);
 		Mockito.when(dao.create(created)).thenReturn(created);
 
 		assertEquals(created, controller.create());
-
-		Mockito.verify(utils, Mockito.times(2)).getString();
+		
+		Mockito.verify(utils, Mockito.times(3)).getLong();
 		Mockito.verify(dao, Mockito.times(1)).create(created);
 	}
 
 	@Test
 	public void testReadAll() {
 		List<Order> orders = new ArrayList<>();
-		orders.add(new Order(2, "28/10/2021", 1,1));
+		orders.add(new Order(2,1,1));
 
 		Mockito.when(dao.readAll()).thenReturn(orders);
 		assertEquals(orders, controller.readAll());
@@ -68,20 +65,15 @@ public class OrderControllerTest {
 
 	@Test
 	public void testUpdate() {
-		Order updated = new Order(2, "28/10/2021", 1,1);
+		Order updated = new Order(2,1,1);
 
 		Mockito.when(this.utils.getLong()).thenReturn(updated.getOrderID());
-		Mockito.when(this.utils.getString()).thenReturn(updated.getDatePlaced());
 		Mockito.when(this.utils.getLong()).thenReturn(updated.getId());
 		Mockito.when(this.utils.getLong()).thenReturn(updated.getProductID());
 		Mockito.when(this.dao.update(updated)).thenReturn(updated);
-
 		assertEquals(updated, this.controller.update());
 
-		Mockito.verify(this.utils, Mockito.times(1)).getLong();
-		Mockito.verify(this.utils, Mockito.times(2)).getString();
-		Mockito.verify(this.utils, Mockito.times(1)).getLong();
-		Mockito.verify(this.utils, Mockito.times(1)).getLong();
+		Mockito.verify(this.utils, Mockito.times(3)).getLong();	
 		Mockito.verify(this.dao, Mockito.times(1)).update(updated);
 	}
 
